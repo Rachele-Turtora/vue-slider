@@ -36,14 +36,15 @@ const { createApp } = Vue
             this.indexCount = index;
         },
 
-        mounted(){
-            setInterval(() => {
-                this.indexCount++;
-            }, 3000);
-        },
-
         ciao(){
             console.log("ciao");
         }
+    },
+
+    mounted(){
+        setInterval(() => {
+            this.indexCount++;
+        }, 3000);
     }
+    
   }).mount('#app')
