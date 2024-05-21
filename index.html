@@ -10,14 +10,18 @@
     
     <div id="app">
         <div class="container">
-                <div class="items" @mousehover="ciao">
+                <div class="items" @mouseover="ciao">
                     <div class="item" v-for="(image, index) in images" v-show="indexCount === index">
-                        <img :src="image">
+                        <img :src="image.image">
+                        <div class="content">
+                            <h1>{{image.title}}</h1>
+                            <p>{{image.text}}</p>
+                        </div>
                     </div>
                 </div>
                 <div class="thumbs">
                     <div class="thumb" v-for="(image, index) in images" @click="selectThumb(index)">
-                        <img :src="image">
+                        <img :src="image.image">
                     </div>
                     <div @click="arrowUp" class="arrow prev"></div>
                     <div @click="arrowDown" class="arrow next"></div>
