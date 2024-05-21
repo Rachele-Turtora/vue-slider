@@ -16,19 +16,19 @@ const { createApp } = Vue
     },
 
     methods: {
-        arrowUp(indexCount){
-            if (indexCount < 0){
-                this.indexCount = 4
+        arrowUp(){
+            if (this.indexCount !== 0){
+                this.indexCount--;
             } else {
-                this.indexCount--
+                this.indexCount = 4;
             }
         },
 
-        arrowDown(indexCount){
-            if (indexCount > 4){
-                this.indexCount = 0
+        arrowDown(){
+            if (this.indexCount !== 4){
+                this.indexCount++;
             } else {
-                this.indexCount++
+                this.indexCount = 0;
             }
         }
     }
