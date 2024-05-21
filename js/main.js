@@ -33,7 +33,17 @@ const { createApp } = Vue
         },
 
         selectThumb(index){
-            this.indexCount = index
+            this.indexCount = index;
+        },
+
+        mounted(){
+            setInterval(() => {
+                this.indexCount++;
+            }, 3000);
+        },
+
+        ciao(){
+            console.log("ciao");
         }
     }
   }).mount('#app')

@@ -10,12 +10,7 @@
     
     <div id="app">
         <div class="container">
-            <div class="buttons">
-                <button class="start">Start</button>
-                <button class="end">End</button>
-                <button class="reverse">Reverse</button>
-            </div>
-                <div class="items">
+                <div class="items" @mousehover="ciao">
                     <div class="item" v-for="(image, index) in images" v-show="indexCount === index">
                         <img :src="image">
                     </div>
