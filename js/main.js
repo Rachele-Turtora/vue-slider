@@ -52,18 +52,14 @@ const { createApp } = Vue
             this.indexCount = index;
         },
 
-        ciao(){
-            console.log("ciao");
+        stopSlider(){
+            clearInterval();
         }
     },
 
     mounted(){
         setInterval(() => {
-            if (this.indexCount !== 4){
-                this.indexCount++;
-            } else {
-                this.indexCount = 0
-            }
+            this.arrowDown()
         }, 3000);
     }
 
