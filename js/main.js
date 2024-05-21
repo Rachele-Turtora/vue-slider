@@ -43,8 +43,12 @@ const { createApp } = Vue
 
     mounted(){
         setInterval(() => {
-            this.indexCount++;
+            if (this.indexCount !== 4){
+                this.indexCount++;
+            } else {
+                this.indexCount = 0
+            }
         }, 3000);
     }
-    
+
   }).mount('#app')
