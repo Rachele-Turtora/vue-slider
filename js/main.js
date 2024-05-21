@@ -30,6 +30,10 @@ const { createApp } = Vue
             } else {
                 this.indexCount = 0;
             }
+        },
+
+        selectThumb(index){
+            this.indexCount = index
         }
     }
   }).mount('#app')
