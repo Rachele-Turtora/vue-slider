@@ -6,7 +6,7 @@ const { createApp } = Vue
         images: [
             {
                 image: 'img/01.webp',
-                title: 'Marvel\'s Spiderman Miles Morale',
+                title: 'Marvel\'s Spiderman Miles Morales',
                 text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
             }, {
                 image: 'img/02.webp',
@@ -27,7 +27,8 @@ const { createApp } = Vue
             }
         ],
 
-        indexCount: 0
+        indexCount: 0,
+        currentInterval: null
       }
     },
 
@@ -53,14 +54,17 @@ const { createApp } = Vue
         },
 
         stopSlider(){
-            clearInterval();
+            clearInterval(currentInterval);
+        },
+
+        startSlider(){
+            currentInterval = setInterval(this.arrowDown, 3000);
+            this.currentInterval = null;
         }
     },
 
     mounted(){
-        setInterval(() => {
-            this.arrowDown()
-        }, 3000);
+        this.startSlider();
     }
 
   }).mount('#app')
