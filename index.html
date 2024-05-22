@@ -22,7 +22,7 @@
                 <div class="thumbs">
                     <div @click="arrowUp" class="arrow prev"></div>
                     <div @click="arrowDown" class="arrow next"></div>
-                    <div class="thumb" v-for="(image, index) in images" @click="selectThumb(index)">
+                    <div class="thumb" v-for="(image, index) in images" :class="{active: indexCount === index}" @click="selectThumb(index)">
                         <img :src="image.image">
                     </div>
                 </div>
